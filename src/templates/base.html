@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>QRCoder</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="leading-normal tracking-normal m-6 bg-cover bg-fixed"
+  style="background: rgb(46,49,146); background: linear-gradient(45deg, rgba(46,49,146,1) 0%, rgba(27,255,255,1) 100%);">
+  <div class="container">
+    <div class="flex h-screen">
+      <h1 class="text-6xl font-bold text-stone-200">
+        <a href="/">QRCoder</a>
+      </h1>
+      <div class="m-auto p-12 rounded-lg backdrop-blur-sm bg-white/30 shadow-2xl">
+        {% if messages %}
+          {% for message in messages %}
+            <div class="bg-red-300 text-red-900 rounded p-2">{{ message }}</div>
+          {% endfor %}
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
